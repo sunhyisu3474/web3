@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./css/login.css">
+    <script src="./js/login.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <!-- 합쳐지고 최소화된 최신 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <!-- 부가적인 테마 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <title>L O G I N</title>
+  </head>
+
+  <body>
+    <header>
+      <div id="header_notice">
+        <div style="font-weight: bolder">개발, 테스트 전용 웹 사이트
+        </div>
+        <div style="font-weight: 200;"><br>현재 웹 사이트는 개발 및 테스트 용도로 사용되며,<br>회원가입 및 제공해주신 정보는 15일 후 자동 파기돱니다.
+        </div>
+      </div>
+    </header>
+
+    <form method="POST" id="input_accounts">
+      <div class="form-group">
+        <input class="form-control" id="id" name="login_id" type="text" style="margin-block: 15px;" placeholder="I  D"><br>
+      </div>
+      <div class="form-group">
+        <input class="form-control" id="pw" name="login_pw" type="password" placeholder="P  W"><br>
+      </div>
+      <button class="btn btn-primary" id="login" type="submit">L O G I N</button>
+      <div class="checkbox">
+        <label id="remember_account">
+          <input type="checkbox">계정정보를 저장할까요?
+        </label>
+      </div>
+    </form>
+
+    <footer>
+      &copy;SunHyisu.. (Website dedicated to development)
+    </footer>
+  </body>
+
+</html>

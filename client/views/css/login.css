@@ -1,0 +1,86 @@
+﻿header {
+	text-align: center;
+}
+
+#header_notice {
+	color: greenyellow;
+	position: relative;
+	top: 340px;
+}
+
+body{
+	background-image: url(\/client\/views\/img\/back_img.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
+}
+
+#input_accounts {
+	text-align: center;
+	position: relative;
+	top: 385px;
+	/*height:15px;*/
+}
+
+.input_account {
+	border: none;
+	border-bottom: 2px rgb(187, 186, 186) solid;
+}
+
+footer {
+	text-align: center;
+	position: relative;
+	top: 450px;
+	color: greenyellow;
+}
+
+/* @media not screen and (min-width:150px) and (max-width:450px) {
+	body {
+		visibility: hidden;
+	}
+
+		body::after {
+			visibility: visible;
+			content: "화면의 크기를 조절하여 주세요.";
+			display: flex;
+			justify-content: center;
+			position: relative;
+			top: -150px;
+			font-size: xx-large;
+			font-weight: bold;
+			font-family: 'Times New Roman', Times, serif;
+		}
+}
+
+@media screen and (min-width:150px) and (max-width:451px) {
+	body {
+		background-image: url("/img/kakao_background.png");
+	}
+} */
+
+#login{
+	font-size:large;
+	font-family:Bahnschrift;
+	font-weight:bold;
+	width:150px;
+	position:relative;
+	top:15px;
+}
+
+.form-group{
+	display: flex;
+	justify-content: center;
+}
+
+#id, #pw{
+	text-align: center;
+	width: 150px;
+}
+
+#remember_account{
+	position: relative;
+	top: 15px;
+	font-weight: 900;
+	color: greenyellow;
+}

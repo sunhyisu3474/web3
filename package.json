@@ -1,0 +1,35 @@
+{
+  "name": "web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "web.js",
+  "scripts": {
+    "start": "node ./web.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sunhyisu3474/web.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sunhyisu3474/web/issues"
+  },
+  "homepage": "https://github.com/sunhyisu3474/web#readme",
+  "dependencies": {
+    "await": "^0.2.6",
+    "bcrypt": "^5.0.1",
+    "color": "^4.0.1",
+    "colors": "^1.4.0",
+    "cookie-parser": "^1.4.5",
+    "ejs": "^3.1.6",
+    "ejs-lint": "^1.2.1",
+    "express": "^4.17.1",
+    "express-mysql-session": "^2.1.7",
+    "express-session": "^1.17.2",
+    "gh-pages": "^3.2.3",
+    "mysql": "^2.18.1",
+    "pm2": "^5.1.2",
+    "typings": "^2.1.1"
+  }
+}

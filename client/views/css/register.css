@@ -1,0 +1,46 @@
+﻿.form-group {
+	display: flex;
+	justify-content: center;
+}
+
+#id, #pw, #confirm_pw {
+	width: 150px;
+	text-align: center;
+}
+
+#register_form {
+	position: relative;
+	top: 450px;
+}
+
+#notice {
+	position: relative;
+	text-align: center;
+	top: 340px;
+	font-weight: bold;
+	font-size: 24px;
+	color: chartreuse;
+}
+
+#pw {
+	margin-top: 24px;
+}
+
+#overlap_id {
+	text-align: center;
+	color: forestgreen;
+	font-size: 15px;
+}
+
+body {
+	background-image: url(\/client\/views\/img\/back_img.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+table{
+	position: relative;
+	top: 700px;
+}

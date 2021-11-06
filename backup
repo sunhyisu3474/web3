@@ -1,0 +1,46 @@
+const server = require('./web');
+const session = require('./js/DB/session');
+const database = require('./js/DB/database');
+const time = require('./js/time');
+const register = require('./register');
+const bodyParser = require('body-parser');
+const bcrypt = require('bcrypt');
+
+require('colors');
+
+server.server.use(bodyParser.urlencoded({extended: false}));  // POST 방식 셋팅
+function sessionLogin() {
+  if (session.session.name) {
+    console.log("로그인 성공");
+  }
+}
+
+function getLogin() {
+  server.server.get('/login', function (request, response) {
+    response.render('login', {});
+  });
+}
+
+
+function postLogin() {
+  server.server.post('/login', function (request, response) {
+    database.db.query(database.LOGIN_SQL, function (error, accounts) {
+      var i = 0;
+      while (i !== accounts.length) {
+        bcrypt.compare(request.body.login_pw, accounts[i].pw, function (error, isValue) {
+          if (isValue) {
+            console.log("로그인 성공");
+            return response.send(`<script>alert("로그인 성공")</script>`);
+          } else if (!isValue) {
+            console.log("[SIGN IN]  일치하는 값이 없습니다.");
+          }
+        });
+        i++;
+      }
+    });
+  });
+}
+
+module.exports = {
+  postLogin, getLogin
+}
