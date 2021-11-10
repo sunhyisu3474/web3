@@ -125,6 +125,10 @@ button.menu:hover{
   cursor: pointer;
 }
 
+#search_bar:focus::placeholder{
+  visibility: hidden;
+}
+
 div#content_box{
   border-inline: 2px groove black;
   border-top: 2px groove black;
@@ -171,8 +175,6 @@ div#TODO{
 textarea{
   width: 850px;
   height: 150px;
-<<<<<<< HEAD
-=======
 }
 
 table, tr, th, td{
@@ -190,5 +192,4 @@ table{
 div#table_contents{
   text-align: -webkit-center;
   margin-top: 15px;
->>>>>>> d1ee75a (update)
 }

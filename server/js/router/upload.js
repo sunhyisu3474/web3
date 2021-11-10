@@ -4,7 +4,10 @@ function getUpload() {
     if (request.session.name) {
       return response.render('upload', {});
     } else {
-      return response.send(`<script>alert("로그인 후 이용 가능합니다.");</script>`)
+      return response.send(`<script>
+      alert("로그인 후 이용 가능합니다.");
+      location.replace('/');
+      </script>`)
     }
   });
 }

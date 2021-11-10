@@ -19,6 +19,7 @@
   "dependencies": {
     "await": "^0.2.6",
     "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.0",
     "color": "^4.0.1",
     "colors": "^1.4.0",
     "cookie-parser": "^1.4.5",
@@ -30,6 +31,7 @@
     "gh-pages": "^3.2.3",
     "mysql": "^2.18.1",
     "pm2": "^5.1.2",
-    "typings": "^2.1.1"
+    "typings": "^2.1.1",
+    "url": "^0.11.0"
   }
 }

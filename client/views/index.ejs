@@ -46,11 +46,13 @@
           <%}%>
         </table>
       </div>
+      <form action="search" method="GET">
       <div id="search">
-        <input id="search_bar" placeholder="검색 내용"></input>
+        <input id="search_bar" name="search_bar" type="text" placeholder="검색 내용">
         <br>
         <button id="search_bar_btn">검색</button>
       </div>
+      </form>
       <div id="TODO">
         <textarea>
           # 에러 상태 : 에러 수정 필요 없음
@@ -67,8 +69,6 @@
   </body>
 </html>
 <%}%>
-
-
           <%if(request_session_name){%>
           <!DOCTYPE html>
           <html lang="ko">
@@ -117,11 +117,13 @@
                     <%}%>
                   </table>
                 </div>
-                <div id="search">
-                  <input id="search_bar" placeholder="검색 내용"></input>
-                  <br>
-                  <button id="search_bar_btn">검색</button>
-                </div>
+                <form action="search" method="GET">
+                  <div id="search">
+                    <input id="search_bar" name="search_bar" type="text" placeholder="검색 내용">
+                    <br>
+                    <button id="search_bar_btn">검색</button>
+                  </div>
+                </form>
                 <div id="TODO">
                   <textarea>
                     # 에러 상태 : 에러 수정 필요 없음

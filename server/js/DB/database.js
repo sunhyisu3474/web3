@@ -21,10 +21,6 @@ server.server.use(session({
 	}
 }));
 
-
-
-
-
 const mysql = require('mysql');
 const db = mysql.createConnection({
 	host: 'localhost',
@@ -32,13 +28,14 @@ const db = mysql.createConnection({
 	user: 'root',
 	password: '#Sunhyisu344774',
 	port: '3474',
-	multipleStatements: true  // 다중쿼리 허용 설정
+	// multipleStatements: true  // 다중쿼리 허용 설정
 });
 
 ///////////////  /*  QUERY  */  ///////////////
-let LOGIN_SQL = `SELECT id, pw FROM accounts WHERE id = ?`;
-let REGISTER_SQL = `INSERT INTO accounts (id, pw) VALUES(?, ?)`;
-let POST_CONTENTS = `INSERT INTO post (title, content) VALUES(?, ?)`;
+const LOGIN_SQL = `SELECT id, pw FROM accounts WHERE id = ?`;
+const REGISTER_SQL = `INSERT INTO accounts (id, pw) VALUES(?, ?)`;
+const POST_CONTENTS = `INSERT INTO post (title, content) VALUES(?, ?)`;
+const READ_POST = `SELECT * FROM post WHERE title = ?`;
 ///////////////  /*  QUERY  */  ///////////////
 
 module.exports = {
@@ -46,6 +43,7 @@ module.exports = {
 	LOGIN_SQL,
 	REGISTER_SQL,
 	POST_CONTENTS,
+	READ_POST,
 	sessionDB,
 	session
 };
