@@ -1,5 +1,10 @@
 body{
   margin: 0px;
+  background-image: url(/client/views/img/logo_transparent.png);
+  background-repeat: no-repeat;
+  background-position-y: 150px;
+  background-position-x: center;
+  background-size: contain;
 }
 
 div#top_header{
@@ -175,21 +180,20 @@ div#TODO{
 textarea{
   width: 850px;
   height: 150px;
+  background-color: transparent;
 }
 
-table, tr, th, td{
+table, th, td{
   border-width: 1px;
   border-color: #080808;
   border-style: groove;
   text-align: center;
+  border-collapse: collapse;
+  margin: auto;
+  margin-top: 15px;
 }
 
 table{
   width: 850px;
   height: fit-content;
-}
-
-div#table_contents{
-  text-align: -webkit-center;
-  margin-top: 15px;
 }

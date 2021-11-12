@@ -1,4 +1,4 @@
-const server = require('/Users/Administrator/Documents/source/github/web/server/js/router/server');
+const server = require('./server');
 const database = require('/Users/Administrator/Documents/source/github/web/server/js/DB/database');
 const url = require('url');
 
@@ -30,20 +30,14 @@ function sign_out_btn_click() {
   }
 }
 
-function getSearch() {
-  server.server.get('/search', function (request, response) {
-    return response.render('search', {});
-  });
-}
-
 function getPost() {
   server.server.get('/search', function (request, response) {
     var data = url.parse(request.url, true).query;
-    database.db.query(database.READ_POST, [data.search_bar], function (error, post, qwe) {
+    database.db.query(database.READ_POST, [data.search_bar, data.search_bar], function (error, post) {
       if (error) {
         return console.log(error);
       } else {
-        console.log(post[data.search_bar].title);  // 어떻게 하면 클라이언트 측에 데이터가 보여지는지 방법 확인하기.
+        console.log(post);
         return response.render('search', {
           post
         });
@@ -56,6 +50,5 @@ function getPost() {
 module.exports = {
   getIndex,
   sign_out_btn_click,
-  getSearch,
   getPost
 }

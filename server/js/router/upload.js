@@ -1,4 +1,5 @@
 const server = require('/Users/Administrator/Documents/source/github/web/server/js/router/server');
+const database = require('/Users/Administrator/Documents/source/github/web/server/js/DB/database');
 function getUpload() {
   server.server.get('/upload', function (request, response) {
     if (request.session.name) {

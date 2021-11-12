@@ -35,7 +35,8 @@ const db = mysql.createConnection({
 const LOGIN_SQL = `SELECT id, pw FROM accounts WHERE id = ?`;
 const REGISTER_SQL = `INSERT INTO accounts (id, pw) VALUES(?, ?)`;
 const POST_CONTENTS = `INSERT INTO post (title, content) VALUES(?, ?)`;
-const READ_POST = `SELECT * FROM post WHERE title = ?`;
+const READ_POST = `SELECT title, content FROM post WHERE title = ? OR content = ?`;
+const READ_POST_2 = `SELECT * FROM post WHERE title = ?`;
 ///////////////  /*  QUERY  */  ///////////////
 
 module.exports = {
@@ -44,6 +45,7 @@ module.exports = {
 	REGISTER_SQL,
 	POST_CONTENTS,
 	READ_POST,
+	READ_POST_2,
 	sessionDB,
 	session
 };

@@ -1,0 +1,21 @@
+div#postTable{
+  margin-top: 50px;
+}
+
+table, th, td{
+  border-width: 1px;
+  border-color: black;
+  border-style: groove;
+  border-collapse: collapse;
+  width: 850px;
+  margin: auto;
+}
+
+table#postTitle, table#postContent{
+  font-size: 24px;
+}
+
+table#postContent{
+  margin-top: 15px;
+
+}
