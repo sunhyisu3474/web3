@@ -4,10 +4,11 @@ const url = require('url');
 
 function getIndex() {
   server.server.get('/', function (request, response) {
-    database.db.query(`SELECT title, content, writer FROM post WHERE writer = "관리자"`, function (error, post) {
+    database.db.query(`SELECT* FROM post WHERE writer = "관리자"`, function (error, post) {
       if (error) {
         console.log(error);
       } else {
+        console.log(request.session.name);
         return response.render('index', {
           post: post,
           request_session_name: request.session.name,
