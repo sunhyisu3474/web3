@@ -1,3 +1,4 @@
+// @ts-nocheck
 const server = require('/Users/Administrator/Documents/source/github/web/server/js/router/server');
 
 const session = require('express-session');
@@ -28,15 +29,16 @@ const db = mysql.createConnection({
 	user: 'root',
 	password: '#Sunhyisu344774',
 	port: '3474',
-	// multipleStatements: true  // 다중쿼리 허용 설정
+	multipleStatements: true  // 다중쿼리 허용 설정
 });
 
 ///////////////  /*  QUERY  */  ///////////////
-const LOGIN_SQL = `SELECT id, pw FROM accounts WHERE id = ?`;
-const REGISTER_SQL = `INSERT INTO accounts (id, pw) VALUES(?, ?)`;
-const POST_CONTENTS = `INSERT INTO post (title, content) VALUES(?, ?)`;
-const READ_POST = `SELECT title, content FROM post WHERE title = ? OR content = ?`;
-const READ_POST_2 = `SELECT * FROM post WHERE title = ?`;
+const LOGIN_SQL = `SELECT id, pw FROM accounts WHERE id = ?;`;
+const REGISTER_SQL = `INSERT INTO accounts (id, pw) VALUES(?, ?);`;
+const POST_CONTENTS = `INSERT INTO post (title, content) VALUES(?, ?);`;
+const READ_POST = `SELECT title, content FROM post WHERE title = ? OR content = ?;`;
+const READ_POST_2 = `SELECT * FROM post WHERE title = ?;`;
+const SELECT_SESSIONS = `SELECT * FROM sessions;`;
 ///////////////  /*  QUERY  */  ///////////////
 
 module.exports = {
@@ -46,6 +48,7 @@ module.exports = {
 	POST_CONTENTS,
 	READ_POST,
 	READ_POST_2,
+	SELECT_SESSIONS,
 	sessionDB,
 	session
 };

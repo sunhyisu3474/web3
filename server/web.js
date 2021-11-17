@@ -14,7 +14,7 @@ server.startServer();
 
 index.getIndex();
 index.getPost();
-
+index.getLogout();
 
 login.getLogin();
 login.postLogin();

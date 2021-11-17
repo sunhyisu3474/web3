@@ -2,36 +2,23 @@ const server = require('./server');
 const database = require('/Users/Administrator/Documents/source/github/web/server/js/DB/database');
 const url = require('url');
 
-function getIndex() {
+function getIndex () {
   server.server.get('/', function (request, response) {
-    database.db.query(`SELECT* FROM post WHERE writer = "관리자"`, function (error, post) {
+    database.db.query(`SELECT * FROM post WHERE writer = "관리자";` + database.SELECT_SESSIONS, function (error, results) {
       if (error) {
         console.log(error);
       } else {
-        console.log(request.session.name);
+        console.log(results[1][0].session_id);
         return response.render('index', {
-          post: post,
-          request_session_name: request.session.name,
-          request_session: request.session
+          post: results[0],
+          session_id: results[1][0].session_id
         });
       }
     });
   });
 }
 
-function sign_out_btn_click() {
-  if (database.session.name) {
-    database.session.destory(function (error) {
-      if (error) {
-        console.log(error);
-      } else {
-        location.href = '/';
-      }
-    });
-  }
-}
-
-function getPost() {
+function getPost () {
   server.server.get('/search', function (request, response) {
     var data = url.parse(request.url, true).query;
     database.db.query(database.READ_POST, [data.search_bar, data.search_bar], function (error, post) {
@@ -47,9 +34,29 @@ function getPost() {
   });
 }
 
+function getLogout () {  // 어떻게 구현하는지? 확인작업 필요
+  server.server.get('/', function (request, response) {
+    database.db.query(`SELECT * FROM post WHERE writer = "관리자";` + database.SELECT_SESSIONS, function (error, results) {
+      if (error) {
+        console.log("로그아웃 중 에러가 발생하였습니다.");
+        return response.render('index');
+      } else {
+        console.log("세션에서 로그아웃 되었습니다.");
+        request.session.destroy(function () {
+          request.session;
+        });
+        return response.render('index', {
+          post: results[0],
+          session_id: results[1][0].session_id
+        });
+      }
+    });
+  });
+}
+
 
 module.exports = {
   getIndex,
-  sign_out_btn_click,
-  getPost
-}
+  getPost,
+  getLogout
+};

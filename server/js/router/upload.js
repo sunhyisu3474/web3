@@ -2,7 +2,7 @@ const server = require('/Users/Administrator/Documents/source/github/web/server/
 const database = require('/Users/Administrator/Documents/source/github/web/server/js/DB/database');
 function getUpload() {
   server.server.get('/upload', function (request, response) {
-    if (request.session.name) {
+    if (session_id) {
       return response.render('upload', {});
     } else {
       return response.send(`<script>

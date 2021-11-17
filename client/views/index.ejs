@@ -1,4 +1,4 @@
-<%if(!request_session_name){%>
+<%if(!session_id){%>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -69,7 +69,7 @@
   </body>
 </html>
 <%}%>
-          <%if(request_session_name){%>
+          <%if(session_id){%>
           <!DOCTYPE html>
           <html lang="ko">
 
@@ -90,7 +90,9 @@
                   <div><img src="./img/logo.png" alt="이미지가 없습니다." id="logo"></div>
                   <div id="header_title" onclick="title_onclick()">SIGNATURE</div>
                   <div id="account">
-                    <button onclick="sign_out_onclick()" class="account" id="sign_in">SIGN OUT</button>
+                    <form action="/client/views/index.ejs" method="get">
+                      <button class="account" id="sign_in">SIGN OUT</button>
+                    </form>
                     <!-- <button onclick="register_btn_click()" class="account" id="sign_up">SIGN UP</button> -->
                   </div>
                 </div>
