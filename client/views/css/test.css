@@ -1,0 +1,43 @@
+body{
+  margin: 0px;
+  background-image: url(/client/views/img/logo_transparent.png);
+  background-repeat: no-repeat;
+  background-position-y: 150px;
+  background-position-x: center;
+  background-size: contain;
+  background-color: gainsboro;
+}
+
+#logo{
+position: absolute;
+animation: rotate_logo 15s infinite;
+width: 85px;
+height: 85px;
+left: 15px;
+position: relative;
+}
+
+div#navigator{
+  display: contents;
+}
+
+button.menu{
+  background-color: transparent;
+  width: fit-content;
+  color: #c1c1c1;
+  border-style: none;
+  font-weight: 850;
+  font-size: xx-large;
+}
+
+button.menu:hover{
+  background-color: #080808;
+}
+
+div#top_header{
+  border-top: 2px groove black;
+  background-color: #222222;
+  height: 85px;
+  display: flex;
+  justify-content: space-around;
+}

@@ -1,31 +1,29 @@
 const server = require('./js/router/server');
-const index = require('./js/router/index');
-const login = require('./js/router/login');
-const register = require('./js/router/register');
-const upload = require('./js/router/upload');
-const database = require('./js/DB/database');
-const time = require('./js/time');
-const search = require('./js/router/search');
-const detailPost = require('./js/router/detailPost');
+const router = require('./js/api');
+const database = require('./js/DB/database')
 
 require('colors');
 
 server.startServer();
+server.socketIO();
 
-index.getIndex();
-index.getPost();
-index.getLogout();
+router.getIndexSignIn();
+router.getIndexSignOut();
+router.getPost();
+router.getLogout();
 
-login.getLogin();
-login.postLogin();
+router.getLogin();
+router.postLogin();
 
-register.getRegister();
-register.postRegister();
+router.getRegister();
+router.postRegister();
 
-upload.getUpload();
-upload.postUpload();
+router.getUpload();
+router.postUpload();
 
-search.getData();
-search.getSearch();
+router.getData();
+router.getSearch();
 
-detailPost.getDetailPost();
+router.getDetailPost();
+
+router.getTest();

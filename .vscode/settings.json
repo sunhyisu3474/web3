@@ -46,14 +46,13 @@
         "authProtocol": "default"
       },
       "previewLimit": 50,
-      "server": "nodejs-011.cafe24.com",
-      "port": 3306,
+      "server": "localhost",
+      "port": 3474,
+      "askForPassword": true,
       "driver": "MySQL",
-      "name": "sunhyisu3474",
-      "group": "cafe24",
-      "database": "sunhyisu3474",
-      "username": "sunhyisu3474",
-      "password": "Sunhyisu344774"
+      "name": "web",
+      "database": "web",
+      "username": "root"
     }
   ],
   "editor.formatOnType": true,

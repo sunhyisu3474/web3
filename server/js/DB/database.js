@@ -18,7 +18,8 @@ server.server.use(session({
 	resave: false,  // 세션을 항상 저장?
 	saveUninitialized: true,
 	cookie: {
-		maxAge: 900000  // 15분
+		maxAge: 900000,  // 15분
+		path: '/'
 	}
 }));
 
@@ -36,10 +37,11 @@ const db = mysql.createConnection({
 const LOGIN_SQL = `SELECT id, pw FROM accounts WHERE id = ?;`;
 const REGISTER_SQL = `INSERT INTO accounts (id, pw) VALUES(?, ?);`;
 const POST_CONTENTS = `INSERT INTO post (title, content) VALUES(?, ?);`;
-const READ_POST = `SELECT title, content FROM post WHERE title = ? OR content = ?;`;
-const READ_POST_2 = `SELECT * FROM post WHERE title = ?;`;
+const READ_POST = `SELECT * FROM post;`;
+const SEARCH_POST = `SELECT * FROM post WHERE title = ?;`;
 const SELECT_SESSIONS = `SELECT * FROM sessions;`;
 ///////////////  /*  QUERY  */  ///////////////
+
 
 module.exports = {
 	db,
@@ -47,7 +49,7 @@ module.exports = {
 	REGISTER_SQL,
 	POST_CONTENTS,
 	READ_POST,
-	READ_POST_2,
+	SEARCH_POST,
 	SELECT_SESSIONS,
 	sessionDB,
 	session
