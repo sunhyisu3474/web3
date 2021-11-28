@@ -88,6 +88,7 @@ function getTest() {
 
 function getChat() {
   server.server.get('/chat', (request, response) => {
+
     return response.render('chat', {
       name: request.session.name
     });
@@ -158,6 +159,7 @@ function postSignIn() {
           }
           else if(isValue) {
             request.session.isLogin = true;
+            request.session.name = request.body.login_id;
             console.log(results[0][0].id);
             return response.redirect('/index_signin');
           } else if(!isValue) {
