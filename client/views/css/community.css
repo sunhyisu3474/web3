@@ -84,3 +84,7 @@ div#top_header{
   display: flex;
   justify-content: space-around;
 }
+
+#chat:hover{
+  cursor: pointer;
+}

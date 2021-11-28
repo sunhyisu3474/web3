@@ -1,15 +1,11 @@
-function login_btn_click () {
-  location.pathname = "login";
+function getSignIn () {
+  location.href = 'signin';
 }
 
-function register_btn_click () {
-  location.pathname = "register";
+function getSignUp () {
+  location.pathname = 'signup';
 }
 
-function title_onclick () {
-  location.href = '/';
-}
-
-function upload_onclick () {
-  location.href = 'upload';
+function getCommunity () {
+  location.href = 'community';
 }

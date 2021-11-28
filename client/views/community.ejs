@@ -2,17 +2,17 @@
 <html>
 
   <head>
-    <link rel="stylesheet" href="./css/upload.css">
-    <script src="./js/upload.js"></script>
-    <title>게시물 작성</title>
+    <link rel="stylesheet" href="./css/community.css">
+    <script src="./js/community.js"></script>
+    <title>커뮤니티</title>
   </head>
 
   <body>
     <header>
       <div id="top_header">
         <div id="navigator">
-          <button class="menu" id="upload" onclick="upload_onclick()">커뮤니티</button>
-          <button class="menu">기능구현</button>
+          <button class="menu" id="community" onclick="getCommunity()">커뮤니티</button>
+          <button id="chat" class="menu" onclick="getChatApp()">랜덤채팅</button>
         </div>
       </div>
     </header>
@@ -23,7 +23,7 @@
           <br><br>
           <textarea type="text" id="content" name="content" placeholder="게시물 내용"></textarea>
           <br>
-          <button id="post_btn" type="submit">게 시</button>
+          <button id="post_btn" type="submit">게시</button>
         </form>
       </div>
     </main>

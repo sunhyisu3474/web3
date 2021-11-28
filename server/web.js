@@ -4,26 +4,24 @@ const database = require('./js/DB/database')
 
 require('colors');
 
-server.startServer();
-server.socketIO();
+// server.startServer();
+router.startServer();
+
 
 router.getIndexSignIn();
 router.getIndexSignOut();
+router.getSignIn();
+router.getSignUp();
 router.getPost();
-router.getLogout();
-
-router.getLogin();
-router.postLogin();
-
-router.getRegister();
-router.postRegister();
-
-router.getUpload();
-router.postUpload();
-
-router.getData();
+router.getCommunity();
 router.getSearch();
-
 router.getDetailPost();
-
 router.getTest();
+router.getChat();
+
+
+router.postSignIn();
+router.postSignOut();
+router.postSignUp();
+router.postUpload();
+router.postDetailPost();

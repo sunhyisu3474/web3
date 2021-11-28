@@ -9,7 +9,6 @@
     <!-- 소켓 관련 스크립트 -->
     <script src="/socket.io/socket.io.js"></script>
     <!-- jquery 스크립트 -->
-    <!-- <script src="//code.jquery.com/jquery-1.11.1.js"></script> -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   </head>
 
@@ -18,7 +17,7 @@
       <textarea id="chatLog" class="chat_log" readonly></textarea>
     </div>
     <form id="chat">
-      <input id="name" class="name" type="text" readonly>
+      <input id="name" class="name" type="text" value="<%=name%>" readonly>
       <input id="message" class="message" type="text">
       <input type="submit" class="chat" value="전송">
     </form>

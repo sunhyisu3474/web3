@@ -85,7 +85,6 @@
   },
   "javascript.inlayHints.parameterNames.enabled": "all",
   "debug.javascript.codelens.npmScripts": "all",
-  "javascript.format.insertSpaceAfterConstructor": true,
   "editor.guides.bracketPairs": "active",
   "editor.bracketPairColorization.enabled": true,
   "javascript.format.insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces": true,
@@ -94,8 +93,15 @@
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis": true,
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces": true,
-  "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
   "typescript.format.insertSpaceBeforeFunctionParenthesis": true,
   "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": false,
-  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces": false
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces": false,
+  "editor.parameterHints.cycle": true,
+  "typescript.inlayHints.parameterNames.enabled": "all",
+  "terminal.integrated.bellDuration": 1500,
+  "search.seedOnFocus": true,
+  "javascript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
+  "javascript.format.insertSpaceAfterKeywordsInControlFlowStatements": false,
+  "typescript.disableAutomaticTypeAcquisition": true,
+  "editor.codeLensFontFamily": "Source Code Pro, Source Code Pro Semibold"
 }

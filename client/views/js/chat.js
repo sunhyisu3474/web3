@@ -1,4 +1,4 @@
-function chatApp () {
+function chatApp() {
   const socket = io();
   $('#chat').on('submit', (e) => {
     socket.emit('send message', $('#name').val(), $('#message').val());
@@ -9,8 +9,5 @@ function chatApp () {
   socket.on('receive message', (msg) => {
     $('#chatLog').append(msg + "\n");
     $('#chatLog').scrollTop($('#chatLog')[0].scrollHeight);
-  });
-  socket.on('change name', (name) => {
-    $('#name').val(name);
   });
 }

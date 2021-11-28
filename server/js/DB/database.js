@@ -34,12 +34,13 @@ const db = mysql.createConnection({
 });
 
 ///////////////  /*  QUERY  */  ///////////////
-const LOGIN_SQL = `SELECT id, pw FROM accounts WHERE id = ?;`;
+const LOGIN_SQL = `SELECT * FROM accounts WHERE id = ?;`;
 const REGISTER_SQL = `INSERT INTO accounts (id, pw) VALUES(?, ?);`;
 const POST_CONTENTS = `INSERT INTO post (title, content) VALUES(?, ?);`;
 const READ_POST = `SELECT * FROM post;`;
 const SEARCH_POST = `SELECT * FROM post WHERE title = ?;`;
 const SELECT_SESSIONS = `SELECT * FROM sessions;`;
+// const UPDATE_ACCOUNTS_ISLOGIN = `UPDATE accounts SET islogin = '1' WHERE`
 ///////////////  /*  QUERY  */  ///////////////
 
 
