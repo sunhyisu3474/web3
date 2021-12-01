@@ -18,6 +18,7 @@ router.getSearch();
 router.getDetailPost();
 router.getTest();
 router.getChat();
+router.getBoard();
 
 
 router.postSignIn();

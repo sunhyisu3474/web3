@@ -88,7 +88,6 @@ function getTest() {
 
 function getChat() {
   server.server.get('/chat', (request, response) => {
-
     return response.render('chat', {
       name: request.session.name
     });
@@ -120,14 +119,18 @@ function getSignIn() {
 function getCommunity() {
   server.server.get('/community', function(request, response) {
     if(request.session.isLogin) {
+      console.log(url.parse(request.url, true).query);
       return response.render('community', {});
-    } else {
+    } else if(!request.session.isLogin) {
       request.session.resetMaxAge();
       return response.send(`<script>
       alert("로그인 후 이용 가능합니다.");
       location.href='signin';
       </script>`);
-    }
+    } /* else if(url.parse(request.url, true).query == "board") {
+      console.log("성공");
+      return response.render('board', {});
+    } */
   });
 }
 
@@ -143,6 +146,12 @@ function getSearch() {
   server.server.get('/search', function(request, response) {
     request.session.resetMaxAge();
     return response.render('search', {});
+  });
+}
+
+function getBoard() {
+  server.server.get('/board', (request, response) => {
+    return response.render('board', {});
   });
 }
 
@@ -163,10 +172,10 @@ function postSignIn() {
             console.log(results[0][0].id);
             return response.redirect('/index_signin');
           } else if(!isValue) {
-            return response.send(`<script>
-              alert("일치하는 계정이 없습니다.");
-              location.href='/login';
-              </script>`);
+            return response.send(`< script >
+  alert("일치하는 계정이 없습니다.");
+  location.href = '/login';
+              </script > `);
           }
         });
       }
@@ -189,17 +198,17 @@ function postSignUp() {
               database.db.query(database.REGISTER_SQL, [request.body.registerID, request.body.registerPW], function(ER_DUP_ENTRY, error) {
                 if(ER_DUP_ENTRY) {
                   console.log("Duplicate account.");
-                  return response.send(`<script>
-                  alert("이미 존재하는 ID입니다.\\n로그인 페이지로 이동합니다.");
-                  location.href = '/login';
-                  </script>`);
+                  return response.send(`< script >
+    alert("이미 존재하는 ID입니다.\\n로그인 페이지로 이동합니다.");
+  location.href = '/login';
+                  </script > `);
                 } else if(!ER_DUP_ENTRY) {
                   request.session.save(function(error) {
                     console.log("A new account has been created.");
-                    return response.send(`<script>
-        alert("계정이 생성되었습니다.\\n로그인 페이지로 이동합니다.");
-        location.replace('login');
-        </script>`);
+                    return response.send(`< script >
+    alert("계정이 생성되었습니다.\\n로그인 페이지로 이동합니다.");
+  location.replace('login');
+        </script > `);
                   });
                 } else {
                   throw error;
@@ -210,20 +219,20 @@ function postSignUp() {
         }
       });
     } else if(request.body.registerPW_confirm !== request.body.registerPW) {
-      return response.send(`<script>
+      return response.send(`< script >
     alert("입력하신 암호와 재확인 암호가 불일치합니다.\\n암호를 다시 한 번 확인해주세요.");
-    history.back();
-    </script>`);
+  history.back();
+    </script > `);
     } else if(request.body.registerID.length < 12) {
-      return response.send(`<script>
+      return response.send(`< script >
     alert("ID 값은 최소 12자 이상으로 입력하세요.");
-    history.back();
-    </script>`);
+  history.back();
+    </script > `);
     } else if(request.body.registerPW === "" || " ") {
-      return response.send(`<script>
+      return response.send(`< script >
     alert("암호에 공백을 입력하셨습니다.\\n암호 규칙에 맞게 가입을 진행해주세요.");
-    history.back();
-    </script>`);
+  history.back();
+    </script > `);
     }
   });
 }
@@ -247,24 +256,24 @@ function postDetailPost() {
 function postUpload() {
   server.server.post('/community', function(request, response) {
     if(!request.body.title || !request.body.content) {
-      return response.send(`<script>
-      location.href = '/community';
-      </script>`);
+      return response.send(`< script >
+    location.href = '/community';
+      </script > `);
     } else {
       database.db.query(database.POST_CONTENTS, [request.body.title, request.body.content], function(error) {
         if(error) {
           console.log("An error occurred while registering the post in the DB.");
-          return response.send(`<script>
-      alert("게시물 등록 중 에러가 발생하였습니다.");
-      location.href = '/community';
-      </script>`);
+          return response.send(`< script >
+    alert("게시물 등록 중 에러가 발생하였습니다.");
+  location.href = '/community';
+      </script > `);
         } else {
           request.session.resetMaxAge();
           console.log("A new post has been registered.");
-          return response.send(`<script>
-      alert("게시물이 등록되었습니다.");
-      location.replace('/');
-      </script>`);
+          return response.send(`< script >
+    alert("게시물이 등록되었습니다.");
+  location.replace('/');
+      </script > `);
         }
       });
     }
@@ -297,6 +306,7 @@ module.exports = {
   getTest,
   getSignUp,
   getSearch,
+  getBoard,
   postSignUp,
   postDetailPost,
   postUpload,
