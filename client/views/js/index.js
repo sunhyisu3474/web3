@@ -1,11 +1,15 @@
-function getSignIn () {
-  location.href = 'signin';
+function getSignIn() {
+  location.href = '/signin';
 }
 
-function getSignUp () {
-  location.pathname = 'signup';
+function getSignUp() {
+  location.href = '/signup';
 }
 
-function getCommunity () {
-  location.href = 'community';
+function getCommunity() {
+  location.href = '/community';
+}
+
+function getIndex() {
+  location.href = '/';
 }

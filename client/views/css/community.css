@@ -75,6 +75,7 @@ button.menu{
 
 button.menu:hover{
   background-color: #080808;
+  cursor: pointer;
 }
 
 div#top_header{
@@ -83,8 +84,4 @@ div#top_header{
   height: 85px;
   display: flex;
   justify-content: space-around;
-}
-
-#chat:hover{
-  cursor: pointer;
 }

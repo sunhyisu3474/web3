@@ -1,8 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\server"
+    "\\client",
+    "\\client\\views",
+    "\\server",
+    "\\server\\js"
   ],
-  "SelectedNode": "\\server\\web.js",
+  "SelectedNode": "\\server\\js\\api.js",
   "PreviewInSolutionExplorer": false
 }

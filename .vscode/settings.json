@@ -15,7 +15,7 @@
   "files.autoSave": "afterDelay",
   "editor.fontSize": 15,
   "editor.tabSize": 2,
-  "editor.fontFamily": "Source Code Pro, Source Code Pro Semibold",
+  "editor.fontFamily": "'Source Code Pro', 'Source Code Pro Semibold'",
   "editor.accessibilityPageSize": 15,
   "editor.wordWrapColumn": 150,
   "workbench.editor.wrapTabs": true,
@@ -103,5 +103,15 @@
   "javascript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
   "javascript.format.insertSpaceAfterKeywordsInControlFlowStatements": false,
   "typescript.disableAutomaticTypeAcquisition": true,
-  "editor.codeLensFontFamily": "Source Code Pro, Source Code Pro Semibold"
+  "terminal.integrated.lineHeight": 0,
+  "terminal.integrated.localEchoLatencyThreshold": 0,
+  "terminal.integrated.scrollback": 1500,
+  "terminal.integrated.cursorWidth": 0,
+  "scm.inputFontSize": 15,
+  "debug.console.fontFamily": "'Source Code Pro', 'Source Code Pro Semibold'",
+  "markdown.preview.fontFamily": "'Source Code Pro', 'Source Code Pro Semibold'",
+  "scm.inputFontFamily": "'Source Code Pro', 'Source Code Pro Semibold'",
+  "editor.inlayHints.fontFamily": "'Source Code Pro', 'Source Code Pro Semibold'",
+  "editor.codeLensFontFamily": "'Source Code Pro', 'Source Code Pro Semibold'",
+  "terminal.integrated.fontFamily": "'Source Code Pro', 'Source Code Pro Semibold'"
 }

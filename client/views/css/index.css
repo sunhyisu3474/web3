@@ -1,174 +1,25 @@
 body{
   margin: 0px;
-  background-image: url(/client/views/img/logo_transparent.png);
-  background-repeat: no-repeat;
-  background-position-y: 150px;
-  background-position-x: center;
-  background-size: contain;
-  background-color: gainsboro;
-}
-
-div#top_header{
-  border-top: 2px groove black;
-  background-color: #222222;
-  height: 85px;
-  display: flex;
-  justify-content: space-between;
-}
-
-#account{
-  right: 15px;
-  color: wheat;
-  position: relative;
-
 }
 
 .account{
   background-color: transparent;
-  border-style: groove;
-  border-color: #c1c1c1;
-  font-size: 40px;
-  border-radius: 15px;
-  font-family: 'Bebas Neue', cursive;
-  border-spacing: 12;
+  border: none;
+  color: sienna;
+  font-size: 15px;
+  font-weight: bolder;
 }
 
 .account:hover{
   cursor: pointer;
 }
 
-#login_btn:hover{
-  cursor: pointer;
-}
-
-#logo{
-position: absolute;
-animation: rotate_logo 15s infinite;
-width: 85px;
-height: 85px;
-left: 15px;
-position: relative;
-}
-
-@keyframes rotate_logo{
-  15%{
-    transform: rotate(150deg);
-  } 50%{
-    transform: rotate(75deg);
-  } 75%{
-    transform: rotate(150deg);
-  } 100%{
-    transform: rotate(0deg);
-  }
-}
-
-div#navigator{
-  display: contents;
-}
-
-button.menu{
-  background-color: transparent;
-  width: fit-content;
-  /* font-size: 24px; */
-  color: #c1c1c1;
-  border-style: none;
-  font-weight: 850;
-  font-size: xx-large;
+div#divLogoTitle{
+  text-align: center;
 }
 
 button.menu:hover{
   background-color: #080808;
-}
-
-#community:hover{
-  cursor: pointer;
-}
-
-#search{
-  position: relative;
-  text-align: center;
-  top: 24px;
-}
-
-#search_bar{
-  background-color: transparent;
-  width: 850px;
-  height:fit-content;
-  border-radius: 10px;
-  border-color: black;
-  font-size: 24px;
-  color: black;
-}
-
-#search_bar::placeholder{
-  text-align: center;
-}
-
-#search_bar_btn{
-  background-color: transparent;
-  height: fit-content;
-  width: fit-content;
-  border-radius: 10px;
-  border-color: black;
-  font-size: 15px;
-  margin-top: 10px;
-}
-
-#search_bar_btn:hover{
-  cursor: pointer;
-}
-
-#search_bar:focus::placeholder{
-  visibility: hidden;
-}
-
-div#content_box{
-  border-inline: 2px groove black;
-  border-top: 2px groove black;
-  width: 850px;
-  height: fit-content;
-  margin-top: 15px;
-  color: aliceblue;
-}
-
-div#index{
-  width: 850px;
-  height: fit-content;
-  color: black;
-  border-bottom: 2px groove black;
-  font-size: 24px;
-  font-weight: 850;
-}
-
-dl{
-  display: flex;
-  justify-content: space-around;
-  color: black;
-}
-
-dt.content, dd.content{
-  color: black;
-}
-
-div.content_line{
-  border-block: 1px groove black;
-}
-
-div#contents_layout{
-  text-align: -webkit-center;
-}
-
-div#TODO{
-  position: relative;
-  text-align: center;
-  top: 50px;
-  color: black;
-}
-
-textarea{
-  width: 850px;
-  height: 150px;
-  background-color: transparent;
 }
 
 table, th, td{
@@ -176,7 +27,6 @@ table, th, td{
   border-color: #080808;
   border-style: groove;
   text-align: center;
-  border-collapse: collapse;
   margin: auto;
   margin-top: 15px;
 }
@@ -186,13 +36,39 @@ table{
   height: fit-content;
 }
 
-button#sign_in, button#sign_up{
-  color: #c1c1c1;
-  border-color: #c1c1c1;
-  font-family: fantasy;
-}
-
 div#account{
   height: auto;
-  top: 15px;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+}
+
+div#bestContentsTitle{
+  text-align: center;
+  font-size: 24px;
+  font-style: oblique;
+  font-variant: small-caps;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bolder;
+  color: brown;
+}
+
+table#bestContents{
+  width: fit-content;
+  height: fit-content;
+  border-width: 1px;
+  border-style: groove;
+  border-color: black;
+}
+
+button#btnSubmit{
+  width: 85px;
+}
+
+a#connectionName{
+  font-size: 24px;
+}
+
+li.nav-item{
+  font-size: 15px;
 }

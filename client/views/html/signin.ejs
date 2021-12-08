@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./css/signin.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <title>L O G I N</title>
+  </head>
+
+  <body>
+    <header>
+      <div id="header_notice">
+        <div style="font-weight: bolder">개발, 테스트 전용 웹 사이트
+        </div>
+        <div style="font-weight: 200;"><br>현재 웹 사이트는 개발 및 테스트 용도로 사용되며,<br>회원가입 및 제공해주신 정보는 15일 후 자동 파기돱니다.
+        </div>
+      </div>
+    </header>
+
+    <form method="POST" id="input_accounts">
+      <div class="form-group">
+        <input class="form-control" id="id" name="login_id" type="text" style="margin-block: 15px;" placeholder="I  D"><br>
+      </div>
+      <div class="form-group">
+        <input class="form-control" id="pw" name="login_pw" type="password" placeholder="P  W"><br>
+      </div>
+      <button class="btn btn-primary" id="login" type="submit">L O G I N</button>
+      <div class="checkbox">
+        <label id="remember_account">
+          <input type="checkbox">계정정보를 저장할까요?
+        </label>
+      </div>
+    </form>
+
+    <footer>
+      &copy;SunHyisu.. (Website dedicated to development)
+    </footer>
+  </body>
+
+</html>

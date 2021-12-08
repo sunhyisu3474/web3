@@ -1,0 +1,41 @@
+/* form start */
+form#postForm{
+  width: fit-content;
+  border-color: black;
+  border-width: 2px;
+  border-style: groove;
+  margin: auto;
+  text-align: center;
+}
+
+input#postTitle, textarea#postContent{
+  width: 500px;
+  margin: 10px;
+}
+
+input#postTitle{
+  margin-top: 10px;
+}
+
+textarea#postContent{
+  height: 500px;
+}
+
+button#postUpload{
+  width: fit-content;
+  height: fit-content;
+  font-size: medium;
+  margin-bottom: 10px;
+}
+
+input#postTitle, textarea#postContent::placeholder{
+  text-align: center;
+}
+
+textarea#postContent::placeholder{
+  line-height: 500px;
+}
+
+input#postTitle{
+}
+/* form end */
