@@ -13,7 +13,7 @@ router.getCommunity();
 router.getDetailPost();
 router.getTest();
 router.getChat();
-router.getUpload();
+router.getBoardUpload();
 
 
 router.postSignIn();

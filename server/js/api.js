@@ -181,9 +181,17 @@ function searchContents() {  // 게시물 통합 검색 조회 서비스 및 라
   });
 }
 
-function getUpload() {
-  server.server.get('/upload', (request, response) => {
-    return response.render('boardUpload', {});
+function getBoardUpload() {
+  server.server.get('/board/boardupload', (request, response) => {
+    if(request.session.name) {
+      return response.render('boardUpload', {
+        name: "작성자: " + request.session.name
+      });
+    } else if(!request.session.name) {
+      return response.render('boardUpload', {
+        name: "로그인이 필요합니다."
+      })
+    }
   });
 }
 
@@ -276,9 +284,10 @@ function postSignUp() {
 }
 
 function postUpload() {
-  server.server.post('/boardUpload' || '/upload', (request, response) => {
+  server.server.post('/board/boardUpload', (request, response) => {
     if(!request.body.postTitle || !request.body.postContent) {
       return response.send(`<script>
+      alert("필수 항목을 입력하세요.");
       location.href = '/board/boardUpload';
       </script>`);
     } else {
@@ -336,12 +345,11 @@ module.exports = {
   getChat,
   getTest,
   getSignUp,
-  getUpload,
+  getBoardUpload,
   postSignUp,
   getDetailPost,
   postUpload,
   postSignOut,
   postSignIn,
   searchContents
-  // postDetailPost
 };
