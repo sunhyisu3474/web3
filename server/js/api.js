@@ -1,8 +1,8 @@
 const server = require('./router/server');
 const database = require('./DB/database');
 const bcrypt = require('bcrypt');
+const striptags = require('striptags');
 const url = require('url');
-
 function startServer() {
   server.http.listen(server.port, (error) => {
     if(error) {
@@ -67,18 +67,19 @@ function getIndexSignOut() {
 }
 
 function getDetailPost() {
+
   server.server.get('/board/detailpost', function(request, response) {
     request.session.resetMaxAge();
     var queryData = url.parse(request.url, true).query.idx;
     database.db.query(`SELECT * FROM post WHERE idx = ?`, [queryData], (error, result) => {
-      // console.log(result)
       return response.render('detailpost', {
         name: request.session.name,
         title: result[0].title,
         content: result[0].content,
         writer: result[0].writer,
         suggestion: result[0].suggestion,
-        idx: result[0].idx
+        idx: result[0].idx,
+        // striptagscontent: $('#summernote').summernote('code')
       });
     });
   });

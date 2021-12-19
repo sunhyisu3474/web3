@@ -1,46 +1,46 @@
-﻿.form-group {
-	display: flex;
-	justify-content: center;
+﻿body{
+	min-height: 100vh;
+	background: -webkit-gradient(linear, left bottom, right top, from(#92b5db), to(#1d466c));
+  background: -webkit-linear-gradient(bottom left, #92b5db 0%, #1d466c 100%);
+  background: -moz-linear-gradient(bottom left, #92b5db 0%, #1d466c 100%);
+  background: -o-linear-gradient(bottom left, #92b5db 0%, #1d466c 100%);
+  background: linear-gradient(to top right, #92b5db 0%, #1d466c 100%);
+}
+
+div#signupText{
+	font-weight: 850px;
+	font-size: x-large;
 }
 
 #id, #pw, #confirm_pw {
-	width: 150px;
 	text-align: center;
-}
-
-#register_form {
-	position: relative;
-	top: 450px;
+	width: 500px;
 }
 
 #notice {
-	position: relative;
-	text-align: center;
-	top: 340px;
-	font-weight: bold;
-	font-size: 24px;
-	color: chartreuse;
+ text-align: center;
+ margin-top: 85px;
+ color: fuchsia;
 }
 
-#pw {
-	margin-top: 24px;
+div.input-group{
+	flex-direction: column;
+	flex-wrap: wrap;
 }
 
-#overlap_id {
-	text-align: center;
-	color: forestgreen;
-	font-size: 15px;
+form#formSignUp{
+	width: fit-content;
+	margin: 50px auto;
+	border-width: 2px;
+	border-style: groove;
+	border-color: darkviolet;
+	border-radius: 10px;
+	padding: 15px;
+	background-color: azure;
+	flex-direction: row;
+	flex-wrap: wrap;
 }
 
-body {
-	background-image: url(\/client\/views\/img\/back_img.jpg);
-	background-repeat: no-repeat;
-	background-position: center;
-	background-attachment: fixed;
-	background-size: cover;
-}
-
-table{
-	position: relative;
-	top: 700px;
+div#asds{
+	margin: auto;
 }

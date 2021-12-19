@@ -21,5 +21,4 @@ router.postSignOut();
 router.postSignUp();
 router.postUpload();
 router.getDetailPost();
-// router.postDetailPost();
 router.searchContents();

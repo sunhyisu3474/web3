@@ -20,7 +20,6 @@
   "editor.wordWrapColumn": 150,
   "workbench.editor.wrapTabs": true,
   "explorer.openEditors.visible": 15,
-  "explorer.incrementalNaming": "smart",
   "editor.cursorStyle": "line-thin",
   "files.autoSaveDelay": 900000,
   "npm-intellisense.packageSubfoldersIntellisense": true,
@@ -66,7 +65,6 @@
   "git.enableSmartCommit": true,
   "debug.openExplorerOnEnd": true,
   "npm.enableRunFromFolder": true,
-  "explorer.compactFolders": false,
   "files.autoGuessEncoding": true,
   "diffEditor.maxFileSize": 0,
   "files.simpleDialog.enable": true,
@@ -76,12 +74,7 @@
   "cSpell.spellCheckOnlyWorkspaceFiles": true,
   "files.exclude": {
     ".gitignore": true,
-    ".vs": true,
-    ".vscode": true,
-    "node_modules": true,
-    "package-lock.json": true,
-    "package.json": true,
-    "README.md": true
+    ".vs": true
   },
   "javascript.inlayHints.parameterNames.enabled": "all",
   "debug.javascript.codelens.npmScripts": "all",
@@ -113,5 +106,7 @@
   "scm.inputFontFamily": "'Source Code Pro', 'Source Code Pro Semibold'",
   "editor.inlayHints.fontFamily": "'Source Code Pro', 'Source Code Pro Semibold'",
   "editor.codeLensFontFamily": "'Source Code Pro', 'Source Code Pro Semibold'",
-  "terminal.integrated.fontFamily": "'Source Code Pro', 'Source Code Pro Semibold'"
+  "terminal.integrated.fontFamily": "'Source Code Pro', 'Source Code Pro Semibold'",
+  "workbench.editor.closeOnFileDelete": true,
+  "explorer.compactFolders": false
 }

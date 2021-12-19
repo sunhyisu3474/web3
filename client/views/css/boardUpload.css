@@ -9,7 +9,6 @@ div#inputForm{
 
 form#postForm{
   margin: auto;
-  text-align: center;
 }
 
 input#postTitle{
@@ -31,11 +30,9 @@ div#writer{
   padding-top: 6px;
 }
 
-input#postContent{
-  width: 850px;
-  height: 850px;
+textarea#summernote{
+  /* width: 850px; */
+  /* height: 150px; */
   margin-top: 15px;
-  margin-bottom: 15px;
-  padding-bottom: 95%;
 }
 /* form end */

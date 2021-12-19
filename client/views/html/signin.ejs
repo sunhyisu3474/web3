@@ -19,19 +19,21 @@
       </div>
     </header>
 
-    <form method="POST" id="input_accounts">
-      <div class="form-group">
-        <input class="form-control" id="id" name="login_id" type="text" style="margin-block: 15px;" placeholder="I  D"><br>
+    <form method="POST" id="formAccounts">
+      <div>로그인</div>
+      <div class="input-group">
+        <label for="id">ID</label>
+        <input id="id" class="form-control" name="login_id" type="text" placeholder="I  D"><br>
       </div>
-      <div class="form-group">
-        <input class="form-control" id="pw" name="login_pw" type="password" placeholder="P  W"><br>
+      <div class="input-group">
+        <input id="pw" class="form-control" name="login_pw" type="password" placeholder="P  W"><br>
       </div>
-      <button class="btn btn-primary" id="login" type="submit">L O G I N</button>
-      <div class="checkbox">
-        <label id="remember_account">
-          <input type="checkbox">계정정보를 저장할까요?
-        </label>
+      <div class="input-group">
+        <button class="btn btn-primary" id="login" type="submit">L O G I N</button>
       </div>
+      <label id="remember_account">
+        <input type="checkbox">계정정보를 저장할까요?
+      </label>
     </form>
 
     <footer>
