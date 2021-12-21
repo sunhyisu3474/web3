@@ -9,31 +9,44 @@
     <title>L O G I N</title>
   </head>
 
-  <body>
+  <body class="bg-light">
     <header>
-      <div id="header_notice">
-        <div style="font-weight: bolder">개발, 테스트 전용 웹 사이트
-        </div>
-        <div style="font-weight: 200;"><br>현재 웹 사이트는 개발 및 테스트 용도로 사용되며,<br>회원가입 및 제공해주신 정보는 15일 후 자동 파기돱니다.
+      <div id="headerNotice">
+        <div style="font-weight: bolder">개발, 테스트 전용 웹 사이트</div>
+        <div style="font-weight: 200;">
+          <br>현재 웹 사이트는 개발 및 테스트 용도로 사용되며, <br>회원가입 및 제공해주신 정보는 15일 후 자동 파기됩니다.
         </div>
       </div>
     </header>
 
     <form method="POST" id="formAccounts">
-      <div>로그인</div>
+      <div style="font-weight: bolder; font-size: larger;">로그인</div>
       <div class="input-group">
-        <label for="id">ID</label>
-        <input id="id" class="form-control" name="login_id" type="text" placeholder="I  D"><br>
+        <label id="lbID" for="id">ID</label>
+        <input id="id" class="form-control" name="login_id" type="text" placeholder="I  D">
+        <br>
       </div>
       <div class="input-group">
-        <input id="pw" class="form-control" name="login_pw" type="password" placeholder="P  W"><br>
+        <label id="lbPW" for="pw">PW</label>
+        <input id="pw" class="form-control" name="login_pw" type="password" placeholder="P  W">
+        <br>
       </div>
       <div class="input-group">
-        <button class="btn btn-primary" id="login" type="submit">L O G I N</button>
+        <button id="btnLogin" class="btn btn-primary" type="submit">로 그 인</button>
       </div>
-      <label id="remember_account">
-        <input type="checkbox">계정정보를 저장할까요?
-      </label>
+      <div>
+        <label id="lbSaveAccount" for="ipSaveAccount">
+          <input id="ipSaveAccount" type="checkbox">&nbsp;&nbsp;ID 저장
+        </label>
+      </div>
+      <hr>
+      <div>
+        <a>아이디 찾기</a>
+        &nbsp;&nbsp;
+        <a>비밀번호 찾기</a>
+        &nbsp;&nbsp;
+        <a>회원가입</a>
+      </div>
     </form>
 
     <footer>

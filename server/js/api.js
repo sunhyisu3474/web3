@@ -201,6 +201,11 @@ function postSignIn() {
     database.db.query(database.LOGIN_SQL + database.READ_POST + database.SELECT_SESSIONS, [request.body.login_id], function(error, results) {
       if(error) {
         console.log(error);
+      } else if(!request.body.login_id || !request.body.login_pw) {
+        return response.send(`<script>
+          alert("필수항목을 입력하세요.");
+          location.href='/signin';
+        </script>`);
       } else {
         if(request.body.login_id === results[0][0].id) {
           bcrypt.compare(request.body.login_pw, results[0][0].pw, function(error, isValue) {  // 입력한 값과, DB에 저장된 pw를 분석
