@@ -1,24 +1,26 @@
 const server = require('./js/router/server');
-const router = require('./js/api');
-
-router.startServer();
-
-
-router.getIndexSignIn();
-router.getIndexSignOut();
-router.getSignIn();
-router.getSignUp();
-router.getPost();
-router.getCommunity();
-router.getDetailPost();
-router.getTest();
-router.getChat();
-router.getBoardUpload();
+const index = require('./js/router/api/index');
+const auth = require('./js/router/api/auth');
+const community = require('./js/router/api/community');
 
 
-router.postSignIn();
-router.postSignOut();
-router.postSignUp();
-router.postUpload();
-router.getDetailPost();
-router.searchContents();
+server.startServer();
+
+index.getIndexSignIn();
+index.getIndexSignOut();
+
+auth.getSignIn();
+auth.getSignUp();
+auth.getFindId();
+auth.postSignIn();
+auth.postSignOut();
+auth.postSignUp();
+
+community.getPost();
+community.getCommunity();
+community.getDetailPost();
+community.getChat();
+community.getBoardUpload();
+community.postUpload();
+community.getDetailPost();
+community.searchContents();

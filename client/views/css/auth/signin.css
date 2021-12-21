@@ -1,0 +1,64 @@
+header {
+	text-align: center;
+}
+
+#headerNotice {
+	margin-top: 85px;
+}
+
+#input_accounts {
+	text-align: center;
+	position: relative;
+	top: 385px;
+}
+
+footer {
+	text-align: center;
+	position: relative;
+	top: 450px;
+	color: greenyellow;
+}
+
+button#btnLogin{
+	font-size:large;
+	font-weight:bold;
+	width:150px;
+	/* top:10px; */
+}
+
+form#formAccounts{
+	background-color: transparent;
+	margin: auto;
+	margin-top: 24px;
+	border-width: 1px;
+	border-radius: 10px;
+	border-style: groove;
+	border-color: blueviolet;
+	padding: 15px;
+	width: fit-content;
+}
+
+div.input-group{
+	flex-direction: column;
+	flex-wrap: wrap;
+	align-content: center;
+}
+
+input#id, input#pw{
+	text-align: center;
+	width: 240px;
+	margin: auto;
+}
+
+input#id{
+	margin-top: 24px;
+}
+
+#lbSaveAccount{
+	margin-top: 10px;
+}
+
+a.aFinds{
+	text-decoration: none;
+	color: black;
+}

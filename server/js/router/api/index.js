@@ -1,0 +1,47 @@
+const server = require('/Users/Administrator/Documents/source/GitHub/web/server/js/router/server');
+const database = require('/Users/Administrator/Documents/source/GitHub/web/server/js/DB/database');
+const bcrypt = require('bcrypt');
+const url = require('url');
+
+function getIndexSignIn() {
+  var time = new Date();
+  server.server.get('/index/signin', (request, response) => {
+    database.db.query(`SELECT * FROM post WHERE suggestion >= '2';` + database.SELECT_SESSIONS, function(error, results) {
+      if(error) {
+        console.log(error);
+      } else {
+        if(request.session.isLogin) {
+          return response.render('index/signin', {
+            results,
+            name: request.session.name
+          });
+          request.session.resetMaxAge();
+        } else if(request.session.isLogin == undefined || results[1].expires > time.getTime() + 10_000) {  // session DB에서 갑작스런 초기화로 인한 경우, session 유효시간이 만료된 경우
+          request.session.destroy(function(error) {
+            if(error) {
+              console.log(error);
+            } else {
+              response.clearCookie('sunhyisu').redirect('/index/signout');
+            }
+          });
+        }
+      }
+    });
+  });
+}
+
+function getIndexSignOut() {
+  server.server.get('/', (request, response) => {
+    if(!request.session.isLogin) {
+      response.render('index/signout', {});
+    } else if(request.session.isLogin) {  // session DB에서 갑작스런 초기화로 인한 경우, session 유효시간이 만료된 경우
+      response.redirect('/index/signin');
+    }
+  });
+}
+
+
+module.exports = {
+  getIndexSignIn,
+  getIndexSignOut
+};
