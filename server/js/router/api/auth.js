@@ -34,7 +34,7 @@ function postSignIn() {
               request.session.isLogin = true;
               request.session.name = request.body.login_id;
               console.log(results[0][0].id);
-              return response.redirect('/index/signin');
+              return response.redirect('/');
             } else if(!isValue) {  // 분석한 값이 다르다면?(비로그인 처리)
               return response.send(`<script>
               alert("ID 혹은 PW가 일치하지 않습니다.");
@@ -44,7 +44,7 @@ function postSignIn() {
           });
         } else if(results[0][0].pw == undefined) {
           return response.send(`<script>
-         alert("계정이 존재하지 않습니다.");
+         alert("계정이 존재하지 않습니다.\\n회원가입 페이지로 이동합니다.");
          location.href='/auth/signup';
          </script>`);
         }
@@ -109,14 +109,14 @@ function postSignUp() {
 }
 
 function postSignOut() {
-  server.server.post('/index/signin', function(request, response) {
+  server.server.post('/', function(request, response) {
     request.session.destroy(function(error) {
       if(error) {
         console.log(error);
         console.log("An error occurred while deleting the session.");
       } else {
         console.log("The session was successfully deleted.");
-        return response.clearCookie('sunhyisu').redirect('/');
+        return response.clearCookie('sunhyisu').render('index/signout', {});
       }
     });
   });

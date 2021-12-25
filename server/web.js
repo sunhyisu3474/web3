@@ -6,8 +6,7 @@ const community = require('./js/router/api/community');
 
 server.startServer();
 
-index.getIndexSignIn();
-index.getIndexSignOut();
+index.getIndex();
 
 auth.getSignIn();
 auth.getSignUp();
@@ -24,3 +23,4 @@ community.getBoardUpload();
 community.postUpload();
 community.getDetailPost();
 community.searchContents();
+community.postRecommand();

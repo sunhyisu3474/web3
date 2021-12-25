@@ -31,8 +31,7 @@ function getDetailPost() {
         content: result[0].content,
         writer: result[0].writer,
         suggestion: result[0].suggestion,
-        idx: result[0].idx,
-        // striptagscontent: $('#summernote').summernote('code')
+        idx: result[0].idx
       });
     });
   });
@@ -142,6 +141,21 @@ function searchContents() {  // 게시물 통합 검색 조회 서비스 및 라
   });
 }
 
+function postRecommand() {
+  server.server.post('/community/detailpost', (request, response) => {
+    var queryData = url.parse(request.url, true).query.idx;
+    database.db.query(`UPDATE post SET recommand = recommand+1 WHERE idx = ${ queryData }`, (error) => {
+      if(error) {
+        console.log(error);
+      } else {
+        return response.send(`<script>
+          location.reload();  // 어떻게하면 히스토리를 남기지 않고 새로고침 할 것인가?
+        </script>`);
+      }
+    });
+  });
+}
+
 module.exports = {
   getPost,
   getCommunity,
@@ -150,5 +164,6 @@ module.exports = {
   getBoardUpload,
   getDetailPost,
   postUpload,
-  searchContents
+  searchContents,
+  postRecommand
 };

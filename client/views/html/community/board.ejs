@@ -53,12 +53,9 @@
                   커뮤니티
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="/board">게시판</a></li>
-                  <li><a class="dropdown-item" href="/chat">랜덤채팅</a></li>
                   <li>
-                    <hr class="dropdown-divider">
+                    <a class="dropdown-item" href="/board">게시판</a>
                   </li>
-                  <li><a class="dropdown-item" href="#">기능구현</a></li>
                 </ul>
               </li>
             </ul>
@@ -80,7 +77,7 @@
           </div>
           <%for(var i = 0; i < results.length; i++) {%>
           <%var data = results[i]%>
-          <form action="/board/detailpost" method="get">
+          <form action="/community/detailpost" method="get">
             <div id="tableMain" class="row border border-light border-1 border-start-0 border-end-0">
               <button id="contentsList" type="submit" name="idx" value=<%=data.idx%>>
                 <div class="content col-md-1"><%=data.idx%></div>

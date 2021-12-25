@@ -3,10 +3,10 @@ const database = require('/Users/Administrator/Documents/source/GitHub/web/serve
 const bcrypt = require('bcrypt');
 const url = require('url');
 
-function getIndexSignIn() {
+function getIndex() {
   var time = new Date();
-  server.server.get('/index/signin', (request, response) => {
-    database.db.query(`SELECT * FROM post WHERE suggestion >= '2';` + database.SELECT_SESSIONS, function(error, results) {
+  server.server.get('/', (request, response) => {
+    database.db.query(`SELECT * FROM post WHERE recommand >= '2';` + database.SELECT_SESSIONS, function(error, results) {
       if(error) {
         console.log(error);
       } else {
@@ -21,7 +21,7 @@ function getIndexSignIn() {
             if(error) {
               console.log(error);
             } else {
-              response.clearCookie('sunhyisu').redirect('/index/signout');
+              response.clearCookie('sunhyisu').render('index/signout', {});
             }
           });
         }
@@ -34,14 +34,17 @@ function getIndexSignOut() {
   server.server.get('/', (request, response) => {
     if(!request.session.isLogin) {
       response.render('index/signout', {});
-    } else if(request.session.isLogin) {  // session DB에서 갑작스런 초기화로 인한 경우, session 유효시간이 만료된 경우
-      response.redirect('/index/signin');
+    } else {
+      response.render('index/signin', {
+        name: request.session.name,
+      });
     }
   });
+
+
 }
 
 
 module.exports = {
-  getIndexSignIn,
-  getIndexSignOut
+  getIndex
 };

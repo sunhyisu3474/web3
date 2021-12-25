@@ -1,11 +1,3 @@
-header {
-	text-align: center;
-}
-
-#headerNotice {
-	margin-top: 85px;
-}
-
 #input_accounts {
 	text-align: center;
 	position: relative;
@@ -29,11 +21,7 @@ button#btnLogin{
 form#formAccounts{
 	background-color: transparent;
 	margin: auto;
-	margin-top: 24px;
-	border-width: 1px;
-	border-radius: 10px;
-	border-style: groove;
-	border-color: blueviolet;
+	margin-top: 150px;
 	padding: 15px;
 	width: fit-content;
 }
