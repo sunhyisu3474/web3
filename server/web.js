@@ -2,6 +2,7 @@ const server = require('./js/router/server');
 const index = require('./js/router/api/index');
 const auth = require('./js/router/api/auth');
 const community = require('./js/router/api/community');
+const resume = require('./js/router/api/resume');
 
 
 server.startServer();
@@ -24,3 +25,5 @@ community.postUpload();
 community.getDetailPost();
 community.searchContents();
 community.postRecommand();
+
+resume.getIntroduce();

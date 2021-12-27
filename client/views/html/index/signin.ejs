@@ -17,14 +17,12 @@
   <body style="background-color: #dcdcdc;">
     <header>
       <div id="topHeader">
-        <div id="divLogoTitle">
-          <img id="logoTitle" src="/client/views/img/SIGNATURE.png" alt="이미지가 없습니다.">
-          <div id="account">
-            <form method="post">
-              <button class="account" id="sign_in">로그아웃</button>
-            </form>
-          </div>
+        <div id="account">
+          <form method="post">
+            <button class="account" id="sign_in">로그아웃</button>
+          </form>
         </div>
+      </div>
       </div>
       <nav class="navbar navbar-expand-lg navbar-light bg-dark">
         <div class="container-fluid">
@@ -77,21 +75,64 @@
       </nav>
     </header>
     <main>
-      <div>
-        <div id="bestContentsTitle">Best Contents👑👍</div>
+      <div class="border border-1 border-info" style="width: 640px; margin-left: 15px; margin-top: 15px; padding: 10px;">
+        <div style="font-weight: bolder; font-size: 50px;">소&nbsp;&nbsp;개</div>
+        <hr>
+        <div>
+          <p>
+          <div class="border border-1 border-secondary" style="width: 620px; height: fit-content;">
+            <img src="/client/views/img/sunhyisu.jpg" alt="대체 이미지" style="width: 150px; height: 240px;">
+            <div style="display: inline-block; font-size: smaller;">
+              성명 : 선희수(宣熙秀)
+              <br>
+              나이 : 만 23세
+              <br>
+              주민등록번호 : 990524 - 1590812
+              <br>
+              생년월일 : 1999.05.24
+              <br>
+              연락처 : 010-3194-3474
+              <br>
+              주소 : 광주광역시 광산구 금봉로 18, 소촌라인2차 208동 508호
+            </div>
+          </div>
+          </p>
+          <p>
+            학력사항
+            <br>
+            &nbsp;&nbsp;- 장성 삼계고등학교(부사관과) 졸업
+          </p>
+          <p>
+            경력사항
+            <br>
+            &nbsp;&nbsp;[직무 경력]
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;- 개발관련 직무 경험 없음
+            <br>
+            &nbsp;&nbsp;[사회 경력]
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;-19 ~ 24세 직업군인(부사관)
+          </p>
+          <p>
+            기타사항
+            <br>
+            &nbsp;&nbsp;<button class="btn btn-dark" type="button" onclick="openIntroduce()">지원 동기</button>
+          </p>
+        </div>
+      </div>
+      <div class="border border-1 border-secondary" style="margin: 85px;">
+        <div id="bestContentsTitle">공지사항</div>
         <table id="bestContents" class="table table-hover">
-          <th>제목</th>
-          <th>내용</th>
-          <%if(results[0][0]) {%>
-          <tr>
-            <td><%=results[0][0].title%></td>
-            <td><%=results[0][0].content%></td>
+          <%for(var i = 0; i < results[0].length; i++) {%>
+          <%if(results[0][i]) {%>
+          <tr class="border border-end-5">
+            <td><%=results[0][i].title%></td>
           </tr>
-          <%} else if(!results[0][0]) {%>
+          <%} else if(!results[0][i]) {%>
           <tr>
             <td>추천 게시물 없음</td>
-            <td>추천 게시물 없음</td>
           </tr>
+          <%}%>
           <%}%>
         </table>
       </div>

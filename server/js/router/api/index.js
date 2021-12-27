@@ -6,7 +6,7 @@ const url = require('url');
 function getIndex() {
   var time = new Date();
   server.server.get('/', (request, response) => {
-    database.db.query(`SELECT * FROM post WHERE recommand >= '2';` + database.SELECT_SESSIONS, function(error, results) {
+    database.db.query(`SELECT * FROM post WHERE writer >= 'sunhyisu3474';` + database.SELECT_SESSIONS, function(error, results) {
       if(error) {
         console.log(error);
       } else {

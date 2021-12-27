@@ -149,7 +149,7 @@ function postRecommand() {
         console.log(error);
       } else {
         return response.send(`<script>
-          location.reload();  // 어떻게하면 히스토리를 남기지 않고 새로고침 할 것인가?
+        history.back();
         </script>`);
       }
     });
