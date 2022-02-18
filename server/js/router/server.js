@@ -6,12 +6,11 @@ const time = require('/Users/Administrator/Documents/source/github/web/server/js
 var http = require('http').createServer(server);
 const io = require('socket.io')(http);
 
-// server.set('views', 'C:\/Users\/Administrator\/Documents\/source\/github\/web\/client\/views');
 server.set('views', 'C:\/Users\/Administrator\/Documents\/source\/github\/web\/client\/views\/html');
 server.set('view engine', 'ejs');
 
 server.use(bodyParser.urlencoded({ extended: false }));  // POST 방식 셋팅
-server.use(express.static('C:\/Users\/Administrator\/Documents\/source\/GitHub\/web'));
+server.use(express.static('C:\/Users\/Administrator\/Documents\/source\/github\/web'));
 
 function startServer() {
   http.listen(port, (error) => {

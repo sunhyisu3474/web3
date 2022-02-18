@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/sunhyisu3474/web#readme",
   "dependencies": {
+    "animate.css": "^4.1.1",
     "await": "^0.2.6",
     "bcrypt": "^5.0.1",
     "body-parser": "^1.19.0",
@@ -34,6 +35,7 @@
     "express-session": "^1.17.2",
     "gh-pages": "^3.2.3",
     "http": "^0.0.1-security",
+    "jquery": "^3.6.0",
     "mysql": "^2.18.1",
     "pm2": "^5.1.2",
     "socket.io": "^4.4.0",

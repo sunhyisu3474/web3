@@ -34,8 +34,7 @@ div.input-group{
 
 input#id, input#pw{
 	text-align: center;
-	width: 240px;
-	margin: auto;
+	height: auto;
 }
 
 input#id{

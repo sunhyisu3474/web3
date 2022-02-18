@@ -2,20 +2,23 @@ body{
   margin: 0px;
 }
 
+div#first{
+  text-align: center;
+  margin: 24px;
+  margin-bottom: 240px;
+  height: 240px;
+}
+
 .account{
   background-color: transparent;
   border: none;
   color: sienna;
-  font-size: 15px;
+  /* font-size: 24px; */
   font-weight: bolder;
 }
 
 .account:hover{
   cursor: pointer;
-}
-
-div#divLogoTitle{
-  text-align: center;
 }
 
 button.menu:hover{
@@ -33,11 +36,8 @@ table{
   height: fit-content;
 }
 
-div#account{
-  height: auto;
-  position: absolute;
-  top: 10px;
-  right: 15px;
+div#name{
+  font-size: 15px;
 }
 
 a#aSignIn, a#aSignUp{

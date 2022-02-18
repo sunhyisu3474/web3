@@ -1,5 +1,5 @@
-const server = require('/Users/Administrator/Documents/source/GitHub/web/server/js/router/server');
-const database = require('/Users/Administrator/Documents/source/GitHub/web/server/js/DB/database');
+const server = require('/Users/Administrator/Documents/source/github/web/server/js/router/server');
+const database = require('/Users/Administrator/Documents/source/github/web/server/js/DB/database');
 const bcrypt = require('bcrypt');
 const url = require('url');
 

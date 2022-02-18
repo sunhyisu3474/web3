@@ -1,6 +1,6 @@
 // @ts-nocheck
 // const server = require('/Users/Administrator/Documents/source/github/web/server/js/router/server');
-const server = require('/Users/Administrator/Documents/source/GitHub/web/server/js/router/server');
+const server = require('/Users/Administrator/Documents/source/github/web/server/js/router/server');
 
 const session = require('express-session');
 const sessionDB = {
