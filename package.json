@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sunhyisu3474/web.git"
+    "url": "git+https://GitHub.com/sunhyisu3474/web.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/sunhyisu3474/web/issues"
+    "url": "https://GitHub.com/sunhyisu3474/web/issues"
   },
-  "homepage": "https://github.com/sunhyisu3474/web#readme",
+  "homepage": "https://GitHub.com/sunhyisu3474/web#readme",
   "dependencies": {
     "animate.css": "^4.1.1",
     "await": "^0.2.6",

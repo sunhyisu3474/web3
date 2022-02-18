@@ -103,12 +103,12 @@ button#contentsList{
   display: contents;
 }
 
-div#divPostUpload{
+/* div#divPostUpload{
   position: relative;
   right: 264px;
   bottom: 38px;
   font-size: 15px;
-}
+} */
 
 a#aPostUpload{
   text-decoration: none;

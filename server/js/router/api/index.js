@@ -1,12 +1,12 @@
-const server = require('/Users/Administrator/Documents/source/github/web/server/js/router/server');
-const database = require('/Users/Administrator/Documents/source/github/web/server/js/DB/database');
+const server = require('/Users/Administrator/Documents/source/GitHub/web/server/js/router/server');
+const database = require('/Users/Administrator/Documents/source/GitHub/web/server/js/DB/database');
 const bcrypt = require('bcrypt');
 const url = require('url');
 
 function getIndex() {
   var time = new Date();
   server.server.get('/', (request, response) => {
-    database.db.query(`SELECT * FROM post WHERE writer >= 'sunhyisu3474';` + database.SELECT_SESSIONS, function(error, results) {
+    database.db.query(`SELECT * FROM post WHERE writer = 'sunhyisu3474';` + database.SELECT_SESSIONS, function(error, results) {
       if(error) {
         console.log(error);
       } else {
