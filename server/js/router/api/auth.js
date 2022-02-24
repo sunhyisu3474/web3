@@ -54,7 +54,7 @@ function postSignIn() {
 }
 
 function postSignUp() {
-  server.server.post('/signup', (request, response) => {
+  server.server.post('/auth/signup', (request, response) => {
     if(request.body.signupPW !== "" && request.body.signupID.length >= 12 && request.body.signupPW_confirm === request.body.signupPW) {  // 계정 회원가입 유효성 검증
       bcrypt.genSalt(15, (error, salt) => {
         if(error) {
@@ -89,17 +89,17 @@ function postSignUp() {
           });
         }
       });
-    } else if(request.body.registerPW_confirm !== request.body.registerPW) {
+    } else if(request.body.signupPW_confirm !== request.body.signupPW) {
       return response.send(`<script>
     alert("입력하신 암호와 재확인 암호가 불일치합니다.\\n암호를 다시 한 번 확인해주세요.");
   history.back();
     </script> `);
-    } else if(request.body.registerID.length < 12) {
+    } else if(request.body.signupID.length < 12) {
       return response.send(`<script>
     alert("ID 값은 최소 12자 이상으로 입력하세요.");
   history.back();
     </script> `);
-    } else if(request.body.registerPW === "" || " ") {
+    } else if(request.body.signupPW === "" || " ") {
       return response.send(`<script>
     alert("암호에 공백을 입력하셨습니다.\\n암호 규칙에 맞게 가입을 진행해주세요.");
   history.back();
