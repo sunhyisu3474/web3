@@ -2,6 +2,259 @@
 <html lang="ko">
 
   <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- AOS (Animate on scroll library) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <link rel="stylesheet" href="/client/views/css/index/index.css">
+    <script src="/client/views/js/index/index.js"></script>
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Akronim&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+    <!-- animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <title>T.A.K:</title>
+  </head>
+
+  <body style="background-color: #dcdcdc; margin: none;">
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <div class="container-fluid">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <div id="name">로그인이 필요합니다.</div>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li>
+                <form method="post">
+                  <a id="sign_in" class="account dropdown-item" href="/auth/signin" style="text-decoration: none;">로그인</a>
+                </form>
+              </li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">정보 수정</a></li>
+            </ul>
+          </li>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="navbar-collapse">
+            <ul id="navMenu" class="navbar-collapse me-auto mb-2 mb-lg-0 justify-content-around">
+              <li class="nav-item">
+                <a class="nav-link active text-light" aria-current="page" href="/">홈</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="#">Link</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  기능예시
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  커뮤니티
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li>
+                    <a class="dropdown-item" href="/community/board">게시판</a>
+                  </li>
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
+                  <li><a class="dropdown-item" href="#">기능구현</a></li>
+                </ul>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="통합 검색" aria-label="Search">
+              <button id="btnSubmit" class="btn btn-outline-success" type="submit">검색</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div style="position: relative; height: 90vh;">
+        <img src="client\views\img\배경.jpg" alt="이미지가 존재하지 않습니다." style="width: 98.91vw; height: 90vh;">
+        <p style="font-size: 24px; position: absolute; top: 15%; left: 50%; transform: translate(-50%, -50%);">화면을 아래로 <a id="wordScroll" style="color: rebeccapurple; font-size: 24px; font-weight: 850;">스크롤</a>하면 포트폴리오가 공개됩니다.</p>
+      </div>
+
+      <div style="height: 100vh;"></div>
+
+      <div id="first" data-aos="zoom-in-up" data-aos-id="first" data-aos-offset="500">
+        <div>
+          <br>
+          <a style="color: gray; text-decoration: overline; font-size: 2.4rem; font-family: fantasy; font-weight: bolder;">"Portfolio"</a>
+        </div>
+
+        <hr style="height: 2px; margin-inline: 15px;">
+
+        <div style="display: flex; justify-content: space-evenly;">
+          <div style="display: inline-block; text-align: left; width: 450px; height: fit-content;">
+            <p>
+              웹 개발 공부를 하고있는 비전공 개발자 준비생입니다.
+              <br>
+              항상 긍정적인 마인드와 넘치는 에너지가 저의 장점입니다.
+            </p>
+            <p>
+              항상 단순 개발자가 아닌 <a style="font-weight: bolder;">"어떻게 하면 훌륭한 개발자가
+                <br>
+                될 수 있을까?"</a> 고민을 하면서 이 포트폴리오를 작성하였습니다.
+            </p>
+            <p>
+              직업에 대해 적성이 중요하다고 생각할 수 있습니다.
+              <br>
+              하지만, 적성보단 얼마나 즐겁게 일을 할 수 있는지에 대해
+              <br>
+              중점을 두고 개발자에 대한 생각을 많이 하였습니다.
+            </p>
+          </div>
+          <div style="border-inline: 1px black double;"></div>
+          <div>
+            <!-- <p style="display: inline-block; text-align: left; padding-left: 15px;">
+              <a style="display: block; text-align: center; font-size: 24px; font-style: italic; font-weight: 850;">My Skills</a>
+              <br>
+              - <a style="color: blue;"> [FrontEnd] </a> HTML, CSS, JavaScript
+              <br>
+              - <a style="color: red;"> [BackEnd] </a> JavaScript (Node.js, Express.js)
+            </p> -->
+            <div>
+              <div style="color: slategray; font-size: 24px; font-weight: bolder; font-style: oblique; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; padding-bottom: 15px; text-decoration: overline;">Work Element</div>
+              <div style="display: flex;">
+                <div style="display: inline-block; border: 1px black solid; width: 240px; height: 150px; margin-right: 15px;">
+                  <div style="border-bottom: 2px darkolivegreen dotted; font-size: 1.5rem; font-weight: 700;">
+                    HTML
+                  </div>
+                  <div style="text-align: left; margin-left: 15px; font-size: 0.8rem;">
+                    --
+                  </div>
+                </div>
+                <div style="display: inline-block; border: 1px black solid; width: 240px; height: 150px; margin-inline: 15px;">
+                  <div style="border-bottom: 2px darkolivegreen dotted; font-size: 1.5rem; font-weight: 700;">
+                    CSS
+                  </div>
+                  <div style="text-align: left; margin-left: 15px; font-size: 0.8rem;">
+                    --
+                  </div>
+                </div>
+                <div style="display: inline-block; border: 1px black solid; width: 240px; height: 150px; margin-left: 15px;">
+                  <div style="border-bottom: 2px darkolivegreen dotted; font-size: 1.5rem; font-weight: 700;">
+                    JavaScript
+                  </div>
+                  <div style="text-align: left; margin-left: 15px; font-size: 0.8rem;">
+                    · Node.JS
+                    <br>
+                    &nbsp;&nbsp;- NPM 활용
+                    <br>
+                    · Express.JS
+                    <br>
+                    &nbsp;&nbsp;- Framework를 활용한 BackEnd 구성
+                    <br>
+                    &nbsp;&nbsp;- 로그인, 게시판 구성
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <hr style="margin-inline: 24px;">
+          <a style="color: blue;">WEB DESIGNED</a>
+          <br>
+          <a style="font-weight: 850;">By sun hyisu</a>
+        </div>
+      </div>
+
+      <div style="height: 100vh;"></div>
+
+      <div>
+        <div id="introduce" class="border border-2 border-secondary" style="width: 640px; margin: auto; margin-top: 15px; padding: 10px;" data-aos="flip-up" data-aos-offset="600">
+          <div style="font-weight: bolder; font-size: 50px;">About Me</div>
+          <hr>
+          <div class="border border-1 border-secondary" style="display: flex; align-items: stretch; width: 618px; height: fit-content;">
+            <div style="border-right: 1px black solid; width: 85px; text-align: center;">
+              <img src="\/" alt="사  진">
+            </div>
+            <div style="font-size: smaller; margin-left: 15px;">
+              성명 : 선희수(宣熙秀)
+              <br>
+              나이 : 만 23세
+              <br>
+              주민등록번호 : 990524 - 1590812
+              <br>
+              생년월일 : 1999.05.24
+              <br>
+              연락처 : 010-3194-3474
+              <br>
+              주소 : 광주광역시 광산구 금봉로 18, 소촌라인2차 208동 508호
+            </div>
+          </div>
+          <p>
+            학력사항
+            <br>
+            &nbsp;&nbsp;- 장성 삼계고등학교(부사관과) 졸업
+          </p>
+          <p>
+            경력사항
+            <br>
+            &nbsp;&nbsp;[직무 경력]
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;- 개발관련 직무 경험 없음
+            <br>
+            &nbsp;&nbsp;[사회 경력]
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;- 없음
+            <br>
+            &nbsp;&nbsp;[군 경력]
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;- 19 ~ 24세 직업군인(부사관)
+          </p>
+          <p>
+            기타사항
+            <br>
+            &nbsp;&nbsp;<button class="btn btn-dark" type="button" onclick="openMotive()">지원 동기</button>
+          </p>
+        </div>
+      </div>
+      <div style="height: 100vh;"></div>
+    </main>
+  </body>
+
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="ko">
+
+  <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="/client/views/css/index/index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -68,4 +321,4 @@
     </main>
   </body>
 
-</html>
+</html> -->

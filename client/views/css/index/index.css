@@ -1,12 +1,10 @@
-body{
-  margin: 0px;
-}
-
 div#first{
   text-align: center;
   margin: 24px;
   margin-bottom: 240px;
   height: 240px;
+  height: fit-content;
+  border: 1px black solid;
 }
 
 .account{
@@ -73,4 +71,22 @@ a#connectionName{
 
 li.nav-item{
   font-size: 15px;
+}
+
+a#wordScroll{
+  animation-name: wordScroll;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-fill-mode: none;
+  animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  animation-play-state: running;
+}
+
+@keyframes wordScroll{
+  from{
+    font-size: 24px;
+  } to{
+    font-size: 50px;
+  }
 }
